@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>あなたの悩みを解決するサービス</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Noto Sans JP', 'sans-serif'],
+      },
+      colors: {
+        primary: '#1a1a2e',
+        secondary: '#16213e',
+        accent: '#e94560',
+        highlight: '#0f3460',
+        gold: '#f5a623',
+      },
+      animation: {
+        pulse_cta: 'pulse_cta 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        fadeInUp: 'fadeInUp 0.8s ease-out forwards',
+        scaleIn: 'scaleIn 0.6s ease-out forwards',
+      },
+      keyframes: {
+        pulse_cta: {
+          '0%, 100%': { transform: 'scale(1)', boxShadow: '0 0 0 0 rgba(233, 69, 96, 0.7)' },
+          '50%': { transform: 'scale(1.05)', boxShadow: '0 0 30px 10px rgba(233, 69, 96, 0.3)' },
+        },
+        fadeInUp: {
+          '0%': { opacity: '0', transform: 'translateY(30px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        scaleIn: {
+          '0%': { opacity: '0', transform: 'scale(0.9)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
+        }
+      }
+    }
+  }
+}
+</script>
+<style>
+html { scroll-behavior: smooth; }
+body { font-family: 'Noto Sans JP', sans-serif; }
+.gradient-hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 100%); }
+.gradient-accent { background: linear-gradient(135deg, #e94560 0%, #c62a47 100%); }
+.gradient-dark { background: linear-gradient(180deg, #1a1a2e 0%, #0d0d1a 100%); }
+.text-gradient { background: linear-gradient(90deg, #e94560, #f5a623); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.card-hover { transition: all 0.3s ease; }
+.card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(233, 69, 96, 0.2); }
+.border-glow { border: 2px solid transparent; background-clip: padding-box; position: relative; }
+.border-glow::before { content: ''; position: absolute; inset: -2px; border-radius: inherit; background: linear-gradient(135deg, #e94560, #f5a623); z-index: -1; border-radius: 1rem; }
+.diagonal-bg { clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%); }
+</style>
+</head>
+<body class="bg-primary text-white overflow-x-hidden">
+
+<!-- ヘッダー -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-md border-b border-white/10">
+<div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+<div class="text-2xl font-black tracking-tight">
+<span class="text-accent">YOUR</span><span class="text-white">SERVICE</span>
+</div>
+<a href="#cta-final" class="hidden sm:inline-block bg-accent hover:bg-red-600 text-white font-bold py-2 px-6 rounded-full text-sm transition-all duration-300">
+今すぐ始める
+</a>
+</div>
+</header>
+
+<!-- ===== HERO セクション（Problem - 問題提起） ===== -->
+<section class="gradient-hero min-h-screen flex items-center relative pt-20">
+<div class="absolute inset-0 opacity-10">
+<div class="absolute top-20 left-10 w-72 h-72 bg-accent rounded-full blur-3xl"></div>
+<div class="absolute bottom-20 right-10 w-96 h-96 bg-highlight rounded-full blur-3xl"></div>
+</div>
+<div class="max-w-7xl mx-auto px-4 py-16 md:py-24 relative z-10">
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<div>
+<div class="inline-block bg-accent/20 border border-accent/40 rounded-full px-4 py-1 text-accent text-sm font-bold mb-6">
+⚡ 今だけ特別オファー実施中
+</div>
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-6">
+こんな<span class="text-gradient">悩み</span>、<br>
+ありませんか？
+</h1>
+<div class="space-y-4 mb-8">
+<div class="flex items-start gap-3">
+<span class="text-accent text-2xl mt-1">✕</span>
+<p class="text-lg text-gray-300">何をやっても成果が出ない…もう限界かもしれない</p>
+</div>
+<div class="flex items-start gap-3">
+<span class="text-accent text-2xl mt-1">✕</span>
+<p class="text-lg text-gray-300">時間もお金も投資してきたのに結果が伴わない</p>
+</div>
+<div class="flex items-start gap-3">
+<span class="text-accent text-2xl mt-1">✕</span>
+<p class="text-lg text-gray-300">このままではどんどん取り残されてしまう不安</p>
+</div>
+</div>
+<p class="text-xl md:text-2xl font-bold text-white mb-8">
+その悩み、<span class="text-accent">たった1つの解決策</span>で<br>すべて変わります。
+</p>
+<a href="#cta-final" class="inline-block animate-pulse_cta gradient-accent text-white font-black text-lg md:text-xl py-4 px-10 rounded-full shadow-2xl hover:shadow-accent/50 transition-all duration-300">
+🚀 無料で今すぐ試す
+</a>
+<p class="text-gray-400 text-sm mt-3">※ 30秒で完了・クレジットカード不要</p>
+</div>
+<div class="relative">
+<div class="border-glow rounded-2xl overflow-hidden">
+<img src="https://placehold.co/600x500/1a1a2e/e94560?text=YOUR+SERVICE&font=raleway" alt="サービスイメージ" class="w-full rounded-2xl">
+</div>
+<div class="absolute -bottom-6 -left-6 bg-secondary border border-accent/30 rounded-xl p-4 shadow-2xl">
+<div class="flex items-center gap-3">
+<div class="text-3xl font-black text-accent">98%</div>
+<div class="text-sm text-gray-300">満足度<br>達成</div>
+</div>
+</div>
+<div class="absolute -top-4 -right-4 bg-gold text-primary rounded-full w-20 h-20 flex items-center justify-center font-black text-sm text-center shadow-2xl">
+No.1<br>実績
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== Affinity - 親近感 ===== -->
+<section class="bg-secondary py-20 md:py-28 relative">
+<div class="absolute inset-0 opacity-5">
+<div class="absolute top-0 right-0 w-80 h-80 bg-accent rounded-full blur-3xl"></div>
+</div>
+<div class="max-w-4xl mx-auto px-4 relative z-10">
+<div class="text-center mb-12">
+<h2 class="text-3xl md:text-4xl lg:text-5xl font-black mb-6">
+私たちも<span class="text-accent">同じ悩み</span>を<br>抱えていました
+</h2>
+</div>
+<div class="bg-primary/60 border border-white/10 rounded-2xl p-8 md:p-12 backdrop-blur-sm">
+<div class="flex items-center gap-4 mb-6">
+<img src="https://placehold.co/80x80/e94560/ffffff?text=CEO&font=raleway" alt="代表" class="w-16 h-16 rounded-full border-2 border-accent">
+<div>
+<p class="font-bold text-lg">代表メッセージ</p>
+<p class="text-gray-400 text-sm">Founder & CEO</p>
+</div>
+</div>
+<p class="text-gray-300 text-lg leading-relaxed mb-6">
+「正直に言います。私自身、何度も挫折を経験しました。あらゆる方法を試し、膨大な時間とお金を費やしても結果が出ない日々。<span class="text-white font-bold">「もうダメかもしれない」</span>と何度も思いました。」
+</p>
+<p class="text-gray-300 text-lg leading-relaxed mb-6">
+「しかし、ある<span class="text-accent font-bold">本質的なアプローチ</span>に出会い、すべてが変わりました。だからこそ、同じ悩みを抱える方に、この解決策を届けたいのです。」
+</p>
+<div class="flex items-center gap-2 text-gold">
+<span>★★★★★</span>
+<span class="text-gray-400 text-sm">あの苦しみがあったからこそ、本当に効果のあるものを作れました</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== Solution - 解決策 ===== -->
+<section class="gradient-dark py-20 md:py-28">
+<div class="max-w-7xl mx-auto px-4">
+<div class="text-center mb-16">
+<p class="text-accent font-bold text-lg mb-3">SOLUTION</p>
+<h2 class="text-3xl md:text-4xl lg:text-5xl font-black mb-6">
+<span class="text-gradient">3つのステップ</span>で<br>あなたの悩みを解決
+</h2>
+<p class="text-gray-400 text-lg max-w-2xl mx-auto">
+複雑なことは一切不要。シンプルで再現性のある方法だけを厳選しました。
+</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Step 1 -->
+<div class="card-hover bg-secondary/80 border border-white/10 rounded-2xl p-8 text-center relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 gradient-accent"></div>
+<div class="w-20 h-20 gradient-accent rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl font-black shadow-lg shadow-accent/30">
+01
+</div>
+<h3 class="text-xl font-black mb-4">現状を診断</h3>
+<p class="text-gray-400 leading-relaxed">
+まずは無料であなたの現状を徹底分析。問題の根本原因を明確にし、最適な改善ルートを特定します。
+</p>
+<img src="https://placehold.co/300x180/0f3460/e94560?text=STEP+1&font=raleway" alt="ステップ1" class="w-full rounded-xl mt-6">
+</div>
+<!-- Step 2 -->
+<div class="card-hover bg-secondary/80 border border-white/10 rounded-2xl p-8 text-center relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent to-gold"></div>
+<div class="w-20 h-20 bg-gradient-to-br from-accent to-gold rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl font-black shadow-lg shadow-gold/30">
+02
+</div>
+<h3 class="text-xl font-black mb-4">戦略を実行</h3>
+<p class="text-gray-400 leading-relaxed">
+あなた専用にカスタマイズされたプランを提供。専門家が伴走しながら、確実に成果へ導きます。
+</p>
+<img src="https://placehold.co/300x180/0f3460/f5a623?text=STEP+2&font=raleway" alt="ステップ2" class="w-full rounded-xl mt-6">
+</div>
+<!-- Step 3 -->
+<div class="card-hover bg-secondary/80 border border-white/10 rounded-2xl p-8 text-center relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-gold"></div>
+<div class="w-20 h-20 bg-gold rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl font-black text-primary shadow-lg shadow-gold/30">
+03
+</div>
+<h3 class="text-xl font-black mb-4">成果を最大化</h3>
+<p class="text-gray-400 leading-relaxed">
+継続的なサポートとデータ分析で成果を最大化。一過性ではない、持続的な成長を実現します。
+</p>
+<img src="https://placehold.co/300x180/0f3460/ffffff?text=STEP+
