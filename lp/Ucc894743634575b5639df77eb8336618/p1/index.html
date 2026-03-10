@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>あなたの理想を実現するサービス</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Noto Sans JP', 'Inter', 'sans-serif'],
+      },
+      colors: {
+        primary: '#1a1a2e',
+        accent: '#4361ee',
+        accentLight: '#7209b7',
+        warm: '#f8f9fa',
+      },
+      animation: {
+        pulse_cta: 'pulse_cta 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        fadeInUp: 'fadeInUp 0.8s ease-out forwards',
+        float: 'float 6s ease-in-out infinite',
+      },
+      keyframes: {
+        pulse_cta: {
+          '0%, 100%': { boxShadow: '0 0 0 0 rgba(67, 97, 238, 0.7)' },
+          '50%': { boxShadow: '0 0 0 20px rgba(67, 97, 238, 0)' },
+        },
+        fadeInUp: {
+          '0%': { opacity: '0', transform: 'translateY(30px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+      },
+    },
+  },
+}
+</script>
+<style>
+html { scroll-behavior: smooth; }
+body { font-family: 'Noto Sans JP', 'Inter', sans-serif; }
+.gradient-text {
+  background: linear-gradient(135deg, #4361ee, #7209b7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.gradient-btn {
+  background: linear-gradient(135deg, #4361ee, #7209b7);
+}
+.gradient-btn:hover {
+  background: linear-gradient(135deg, #3a56d4, #6508a4);
+}
+.section-fade { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+.section-fade.visible { opacity: 1; transform: translateY(0); }
+.line-accent { position: relative; }
+.line-accent::after { content: ''; position: absolute; bottom: -8px; left: 0; width: 60px; height: 3px; background: linear-gradient(135deg, #4361ee, #7209b7); border-radius: 2px; }
+.line-accent-center::after { left: 50%; transform: translateX(-50%); }
+.card-hover { transition: all 0.3s ease; }
+.card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
+</style>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+<!-- ヘッダー -->
+<header class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md z-50 border-b border-gray-100">
+<div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+<div class="text-xl font-bold tracking-tight gradient-text">YourService</div>
+<a href="#cta-final" class="hidden sm:inline-block text-sm font-medium text-white gradient-btn px-5 py-2.5 rounded-full hover:opacity-90 transition">無料で始める</a>
+</div>
+</header>
+
+<!-- ヒーローセクション (Problem - 問題提起) -->
+<section class="min-h-screen flex items-center pt-20 pb-16 bg-white relative overflow-hidden">
+<div class="absolute top-20 right-0 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-50"></div>
+<div class="absolute bottom-0 left-0 w-72 h-72 bg-purple-50 rounded-full blur-3xl opacity-50"></div>
+<div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+<div>
+<p class="text-sm font-medium text-accent tracking-widest uppercase mb-4">もう、悩まなくていい。</p>
+<h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6 text-primary">
+あなたの<span class="gradient-text">課題</span>を<br>根本から<span class="gradient-text">解決</span>する
+</h1>
+<p class="text-lg text-gray-500 leading-relaxed mb-8 max-w-lg">
+毎日の業務に追われ、本来やるべきことに時間を使えない。そんな悩みを抱えていませんか？私たちのサービスが、あなたの理想の働き方を実現します。
+</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a href="#cta-final" class="gradient-btn text-white text-center font-bold px-8 py-4 rounded-full text-lg animate-pulse_cta hover:opacity-90 transition">
+今すぐ無料で試す →
+</a>
+<a href="#problem" class="text-gray-500 font-medium px-8 py-4 text-center hover:text-accent transition">
+詳しく見る ↓
+</a>
+</div>
+<div class="mt-10 flex items-center gap-6 text-sm text-gray-400">
+<div class="flex items-center gap-2">
+<svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+初期費用0円
+</div>
+<div class="flex items-center gap-2">
+<svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+30日間無料
+</div>
+<div class="flex items-center gap-2">
+<svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+いつでも解約OK
+</div>
+</div>
+</div>
+<div class="relative flex justify-center animate-float">
+<img src="https://placehold.co/600x500/f8f9fa/e2e8f0?text=Hero+Image" alt="サービスイメージ" class="rounded-2xl shadow-2xl shadow-gray-200/50 w-full max-w-lg">
+</div>
+</div>
+</section>
+
+<!-- Affinity - 共感・親近感 -->
+<section id="problem" class="py-20 bg-warm section-fade">
+<div class="max-w-4xl mx-auto px-4 text-center">
+<p class="text-sm font-medium text-accent tracking-widest uppercase mb-4">あなたはこんな悩みを抱えていませんか？</p>
+<h2 class="text-3xl sm:text-4xl font-bold text-primary mb-16 line-accent line-accent-center inline-block">こんな毎日に疲れていませんか</h2>
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+<div class="bg-white rounded-2xl p-8 text-left card-hover border border-gray-100">
+<div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center mb-5">
+<svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+</div>
+<h3 class="font-bold text-primary text-lg mb-3">時間が足りない</h3>
+<p class="text-gray-500 text-sm leading-relaxed">毎日やることが多すぎて、本当に大切なことに集中できない日々が続いている。</p>
+</div>
+<div class="bg-white rounded-2xl p-8 text-left card-hover border border-gray-100">
+<div class="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center mb-5">
+<svg class="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M12 2a10 10 0 100 20 10 10 0 000-20z"/></svg>
+</div>
+<h3 class="font-bold text-primary text-lg mb-3">成果が出ない</h3>
+<p class="text-gray-500 text-sm leading-relaxed">頑張っているのに、思うような結果が出ずにモチベーションが下がっている。</p>
+</div>
+<div class="bg-white rounded-2xl p-8 text-left card-hover border border-gray-100">
+<div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center mb-5">
+<svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M12 2a10 10 0 100 20 10 10 0 000-20z"/></svg>
+</div>
+<h3 class="font-bold text-primary text-lg mb-3">何から始めれば…</h3>
+<p class="text-gray-500 text-sm leading-relaxed">情報が多すぎて、自分に本当に必要なことが何か分からなくなっている。</p>
+</div>
+</div>
+<div class="mt-14 bg-white rounded-2xl p-8 border border-gray-100 max-w-2xl mx-auto">
+<p class="text-gray-600 leading-relaxed text-lg">
+<span class="font-bold text-primary">大丈夫です。</span><br>
+私たちも同じ悩みを抱えていました。だからこそ、この問題を解決するサービスを作りました。
+</p>
+</div>
+</div>
+</section>
+
+<!-- Solution - 解決策 -->
+<section class="py-20 bg-white section-fade">
+<div class="max-w-6xl mx-auto px-4">
+<div class="text-center mb-16">
+<p class="text-sm font-medium text-accent tracking-widest uppercase mb-4">解決策</p>
+<h2 class="text-3xl sm:text-4xl font-bold text-primary line-accent line-accent-center inline-block">シンプルな3ステップで解決</h2>
+</div>
+<div class="grid md:grid-cols-3 gap-8 mt-12">
+<div class="text-center card-hover bg-white rounded-2xl p-10 border border-gray-100">
+<div class="w-16 h-16 gradient-btn rounded-2xl flex items-center justify-center mx-auto mb-6 text-white font-bold text-2xl">1</div>
+<h3 class="font-bold text-xl text-primary mb-4">無料で登録</h3>
+<p class="text-gray-500 leading-relaxed">メールアドレスだけで簡単に始められます。面倒な設定は一切ありません。</p>
+</div>
+<div class="text-center card-hover bg-white rounded-2xl p-10 border border-gray-100">
+<div class="w-16 h-16 gradient-btn rounded-2xl flex items-center justify-center mx-auto mb-6 text-white font-bold text-2xl">2</div>
+<h3 class="font-bold text-xl text-primary mb-4">最適プランを選択</h3>
+<p class="text-gray-500 leading-relaxed">あなたの状況に合わせた最適なプランをAIが自動で提案します。</p>
+</div>
+<div class="text-center card-hover bg-white rounded-2xl p-10 border border-gray-100">
