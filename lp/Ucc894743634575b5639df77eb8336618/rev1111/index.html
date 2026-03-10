@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ランディングページ</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Noto Sans JP', 'sans-serif'],
+      },
+      colors: {
+        primary: '#E63946',
+        secondary: '#1D3557',
+        accent: '#F4A261',
+        dark: '#0D1B2A',
+        light: '#F1FAEE',
+      },
+      animation: {
+        pulse_cta: 'pulse_cta 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        fadeInUp: 'fadeInUp 0.8s ease-out forwards',
+        float: 'float 3s ease-in-out infinite',
+      },
+      keyframes: {
+        pulse_cta: {
+          '0%, 100%': { transform: 'scale(1)', boxShadow: '0 0 0 0 rgba(230, 57, 70, 0.7)' },
+          '50%': { transform: 'scale(1.05)', boxShadow: '0 0 0 20px rgba(230, 57, 70, 0)' },
+        },
+        fadeInUp: {
+          '0%': { opacity: '0', transform: 'translateY(30px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+      },
+    },
+  },
+}
+</script>
+<style>
+html { scroll-behavior: smooth; }
+.gradient-bg { background: linear-gradient(135deg, #1D3557 0%, #0D1B2A 100%); }
+.gradient-primary { background: linear-gradient(135deg, #E63946 0%, #F4A261 100%); }
+.text-gradient { background: linear-gradient(135deg, #E63946, #F4A261); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.section-fade { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+.section-fade.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body class="font-sans text-gray-800 bg-white overflow-x-hidden">
+
+<!-- ヘッダー -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300" id="header">
+<div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+<div class="text-xl font-bold text-secondary">Your<span class="text-primary">Service</span></div>
+<a href="#cta-final" class="hidden sm:inline-block bg-primary text-white text-sm font-bold px-6 py-2 rounded-full hover:bg-red-700 transition-all duration-300">無料で始める</a>
+</div>
+</header>
+
+<!-- ヒーローセクション (Problem - 問題提起) -->
+<section class="gradient-bg min-h-screen flex items-center pt-16 relative overflow-hidden">
+<div class="absolute inset-0 opacity-10">
+<div class="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full filter blur-3xl"></div>
+<div class="absolute bottom-20 right-10 w-96 h-96 bg-accent rounded-full filter blur-3xl"></div>
+</div>
+<div class="max-w-7xl mx-auto px-4 py-16 md:py-24 relative z-10">
+<div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+<div class="text-center md:text-left">
+<p class="text-accent font-bold text-sm md:text-base mb-4 tracking-wider">もう、一人で悩まないでください</p>
+<h1 class="text-3xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
+その<span class="text-gradient">悩み</span>、<br>
+今日で<span class="text-gradient">終わり</span>にしませんか？
+</h1>
+<p class="text-gray-300 text-base md:text-lg mb-8 leading-relaxed">
+毎日忙しくて時間がない。何から始めればいいかわからない。<br class="hidden md:block">
+そんなあなたのために、私たちがすべて解決します。
+</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+<a href="#cta-final" class="animate-pulse_cta inline-block gradient-primary text-white font-bold text-lg px-8 py-4 rounded-full shadow-2xl hover:shadow-primary/50 transition-all duration-300">
+今すぐ無料で試す →
+</a>
+<a href="#benefits" class="inline-block border-2 border-white/30 text-white font-bold text-lg px-8 py-4 rounded-full hover:bg-white/10 transition-all duration-300">
+詳しく見る
+</a>
+</div>
+<div class="mt-8 flex items-center justify-center md:justify-start gap-6 text-gray-400 text-sm">
+<div class="flex items-center gap-2">
+<svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+<span>無料プランあり</span>
+</div>
+<div class="flex items-center gap-2">
+<svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+<span>最短5分で開始</span>
+</div>
+</div>
+</div>
+<div class="relative animate-float">
+<img src="https://placehold.co/600x500/1D3557/F1FAEE?text=Hero+Image" alt="サービスイメージ" class="rounded-2xl shadow-2xl w-full max-w-md mx-auto">
+<div class="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-lg p-4 hidden md:block">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+<svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+</div>
+<div>
+<p class="font-bold text-secondary text-sm">満足度98%</p>
+<p class="text-gray-500 text-xs">ユーザー評価</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Affinity - 親近感・共感 -->
+<section class="py-16 md:py-24 bg-gray-50">
+<div class="max-w-4xl mx-auto px-4 section-fade">
+<div class="text-center mb-12">
+<p class="text-primary font-bold text-sm tracking-wider mb-2">EMPATHY</p>
+<h2 class="text-2xl md:text-4xl font-black text-secondary mb-6">こんなお悩み、<br class="sm:hidden">ありませんか？</h2>
+</div>
+<div class="grid sm:grid-cols-2 gap-4 md:gap-6">
+<div class="bg-white rounded-xl p-6 shadow-md border-l-4 border-primary hover:shadow-lg transition-all duration-300">
+<div class="flex items-start gap-4">
+<span class="text-3xl">😩</span>
+<div>
+<h3 class="font-bold text-secondary mb-2">時間が足りない</h3>
+<p class="text-gray-600 text-sm leading-relaxed">毎日忙しくて、新しいことに取り組む余裕がまったくない…</p>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl p-6 shadow-md border-l-4 border-primary hover:shadow-lg transition-all duration-300">
+<div class="flex items-start gap-4">
+<span class="text-3xl">😰</span>
+<div>
+<h3 class="font-bold text-secondary mb-2">何から始めればいいかわからない</h3>
+<p class="text-gray-600 text-sm leading-relaxed">情報が多すぎて、正しい方法がわからず行動できない…</p>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl p-6 shadow-md border-l-4 border-primary hover:shadow-lg transition-all duration-300">
+<div class="flex items-start gap-4">
+<span class="text-3xl">💸</span>
+<div>
+<h3 class="font-bold text-secondary mb-2">コストが心配</h3>
+<p class="text-gray-600 text-sm leading-relaxed">効果があるかわからないものに大金を使いたくない…</p>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl p-6 shadow-md border-l-4 border-primary hover:shadow-lg transition-all duration-300">
+<div class="flex items-start gap-4">
+<span class="text-3xl">😓</span>
+<div>
+<h3 class="font-bold text-secondary mb-2">過去に失敗した経験がある</h3>
+<p class="text-gray-600 text-sm leading-relaxed">他のサービスを試したけどうまくいかなかった…</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-10 bg-white rounded-2xl p-6 md:p-8 shadow-lg text-center">
+<p class="text-lg md:text-xl font-bold text-secondary leading-relaxed">
+私たちも同じ悩みを経験してきました。<br>
+だからこそ、<span class="text-primary">本当に必要な解決策</span>をお届けできます。
+</p>
+</div>
+</div>
+</section>
+
+<!-- Solution - 解決策の提示 -->
+<section class="py-16 md:py-24 bg-white">
+<div class="max-w-6xl mx-auto px-4 section-fade">
+<div class="text-center mb-12">
+<p class="text-primary font-bold text-sm tracking-wider mb-2">SOLUTION</p>
+<h2 class="text-2xl md:text-4xl font-black text-secondary mb-4">すべてを解決する<br class="sm:hidden">シンプルな方法</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">複雑なステップは不要です。たった3つのステップで、あなたの悩みを解消します。</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="text-center group">
+<div class="relative mb-6">
+<div class="w-20 h-20 mx-auto gradient-primary rounded-2xl flex items-center justify-center text-white text-3xl font-black shadow-lg group-hover:scale-110 transition-transform duration-300">1</div>
+<div class="hidden md:block absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-8 h-0.5 bg-primary/30"></div>
+</div>
+<img src="https://placehold.co/300x200/F1FAEE/1D3557?text=Step+1" alt="ステップ1" class="rounded-xl shadow-md mb-4 mx-auto w-full max-w-xs">
+<h3 class="font-bold text-xl text-secondary mb-2">無料登録する</h3>
+<p class="text-gray-600 text-sm leading-relaxed">メールアドレスだけで<br>かんたん5分で完了</p>
+</div>
+<div class="text-center group">
+<div class="relative mb-6">
+<div class="w-20 h-20 mx-auto gradient-primary rounded-2xl flex items-center justify-center text-white text-3xl font-black shadow-lg group-hover:scale-110 transition-transform duration-300">2</div>
+<div class="hidden md:block absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-8 h-0.5 bg-primary/30"></div>
+</div>
+<img src="https://placehold.co/300x200/F1FAEE/1D3557?text=Step+2" alt="ステップ
