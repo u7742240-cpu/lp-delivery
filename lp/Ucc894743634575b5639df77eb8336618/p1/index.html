@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>あなたの理想を実現するサービス</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Noto Sans JP', 'Inter', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+      },
+      colors: {
+        primary: '#1a1a2e',
+        accent: '#4f46e5',
+        accentLight: '#818cf8',
+        subtle: '#f8f9fc',
+      },
+      animation: {
+        pulse_cta: 'pulse_cta 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        fadeInUp: 'fadeInUp 0.8s ease-out forwards',
+        float: 'float 3s ease-in-out infinite',
+      },
+      keyframes: {
+        pulse_cta: {
+          '0%, 100%': { boxShadow: '0 0 0 0 rgba(79, 70, 229, 0.5)' },
+          '50%': { boxShadow: '0 0 0 16px rgba(79, 70, 229, 0)' },
+        },
+        fadeInUp: {
+          '0%': { opacity: '0', transform: 'translateY(30px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+      },
+    },
+  },
+}
+</script>
+<style>
+html { scroll-behavior: smooth; }
+body { font-family: 'Noto Sans JP', 'Inter', sans-serif; }
+.gradient-text {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #4f46e5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.glass {
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.line-accent::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #4f46e5, #7c3aed);
+  margin-top: 12px;
+  border-radius: 2px;
+}
+.line-accent-center::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #4f46e5, #7c3aed);
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+</style>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+<nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-gray-100">
+<div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+<div class="text-xl font-bold tracking-tight text-primary">Your<span class="gradient-text">Service</span></div>
+<a href="#cta-final" class="hidden sm:inline-block text-sm font-medium bg-accent text-white px-5 py-2 rounded-full hover:bg-indigo-700 transition-all duration-300">無料で始める</a>
+<a href="#cta-final" class="sm:hidden text-sm font-medium text-accent">お申し込み →</a>
+</div>
+</nav>
+
+<section class="relative min-h-screen flex items-center overflow-hidden pt-16">
+<div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-indigo-50"></div>
+<div class="absolute top-20 right-0 w-96 h-96 bg-indigo-100 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-float"></div>
+<div class="absolute bottom-20 left-0 w-80 h-80 bg-purple-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float" style="animation-delay: 1.5s;"></div>
+<div class="relative max-w-6xl mx-auto px-4 py-20 md:py-28">
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<div>
+<p class="inline-block text-xs font-semibold tracking-widest text-accent uppercase bg-indigo-50 px-4 py-1.5 rounded-full mb-6">今なら無料トライアル実施中</p>
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-primary mb-6">
+もう、一人で<br>
+<span class="gradient-text">悩まなくていい。</span>
+</h1>
+<p class="text-lg md:text-xl text-gray-500 leading-relaxed mb-8 font-light">
+あなたの課題に寄り添い、理想の未来へ導く。<br class="hidden md:block">
+シンプルで確かなソリューションを、ここから。
+</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a href="#cta-final" class="inline-flex items-center justify-center bg-accent text-white text-lg font-semibold px-8 py-4 rounded-full hover:bg-indigo-700 transition-all duration-300 animate-pulse_cta shadow-lg shadow-indigo-200">
+無料で体験する
+<svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+</a>
+<a href="#features" class="inline-flex items-center justify-center text-gray-500 text-lg font-medium px-8 py-4 rounded-full border border-gray-200 hover:border-accent hover:text-accent transition-all duration-300">
+詳しく見る
+</a>
+</div>
+<div class="flex items-center gap-6 mt-8 pt-8 border-t border-gray-100">
+<div class="text-center">
+<p class="text-2xl font-bold text-primary">10,000<span class="text-accent">+</span></p>
+<p class="text-xs text-gray-400 mt-1">ユーザー数</p>
+</div>
+<div class="w-px h-10 bg-gray-200"></div>
+<div class="text-center">
+<p class="text-2xl font-bold text-primary">98<span class="text-accent">%</span></p>
+<p class="text-xs text-gray-400 mt-1">満足度</p>
+</div>
+<div class="w-px h-10 bg-gray-200"></div>
+<div class="text-center">
+<p class="text-2xl font-bold text-primary">5年<span class="text-accent">+</span></p>
+<p class="text-xs text-gray-400 mt-1">の実績</p>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="relative z-10">
+<img src="https://placehold.co/600x500/f8f9fc/4f46e5?text=Your+Service" alt="サービスイメージ" class="rounded-2xl shadow-2xl shadow-indigo-100 w-full">
+</div>
+<div class="absolute -bottom-4 -right-4 w-full h-full bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl -z-0"></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="problem" class="py-20 md:py-28 bg-white">
+<div class="max-w-4xl mx-auto px-4">
+<div class="text-center mb-16">
+<p class="text-sm font-semibold tracking-widest text-accent uppercase mb-3">Problem</p>
+<h2 class="text-3xl md:text-4xl font-bold text-primary line-accent-center">こんなお悩み、ありませんか？</h2>
+</div>
+<div class="space-y-4">
+<div class="flex items-start gap-4 p-6 rounded-2xl bg-subtle border border-gray-100 hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-50 transition-all duration-300">
+<div class="flex-shrink-0 w-10 h-10 bg-red-50 rounded-full flex items-center justify-center">
+<svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+</div>
+<div>
+<h3 class="font-semibold text-primary text-lg">何から始めればいいかわからない</h3>
+<p class="text-gray-500 mt-1">情報が多すぎて、結局何も手につかない日々が続いている…</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-6 rounded-2xl bg-subtle border border-gray-100 hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-50 transition-all duration-300">
+<div class="flex-shrink-0 w-10 h-10 bg-red-50 rounded-full flex items-center justify-center">
+<svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+</div>
+<div>
+<h3 class="font-semibold text-primary text-lg">時間もお金も限られている</h3>
+<p class="text-gray-500 mt-1">忙しい毎日の中で、効率よく結果を出す方法が見つからない…</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-6 rounded-2xl bg-subtle border border-gray-100 hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-50 transition-all duration-300">
+<div class="flex-shrink-0 w-10 h-10 bg-red-50 rounded-full flex items-center justify-center">
+<svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+</div>
+<div>
+<h3 class="font-semibold text-primary text-lg">自分に合った解決策がわからない</h3>
+<p class="text-gray-500 mt-1">一般的なアドバイスではなく、自分の状況に最適な方法を知りたい…</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-6 rounded-2xl bg-subtle border border-gray-100 hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-50 transition-all duration-300">
+<div class="flex-shrink-0 w-10 h-10 bg-red-50 rounded-full flex items-center justify-center">
+<svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+</div>
+<div>
+<h3 class="font-semibold text-primary text-lg">過去に失敗した経験がある</h3>
+<p class="text-gray-500 mt-1">何度か挑戦したけれど、うまくいかなくてもう諦めかけている…</p>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<p class="text-xl md:text-2xl font-bold text-primary">そのお悩み、<span class="gradient-text">すべて解決</span>できます。</p>
+</div>
+</div>
+</section>
+
+<section class="py-20 md:py-28 bg-gradient-to-b from-white to-subtle">
+<div class="max-w-4xl mx-auto px-4">
+<div class="text-center mb-16">
+<p class="text-sm font-semibold tracking-widest text-accent uppercase mb-3">Affinity</p>
+<h2 class="text-3xl md:text-4xl font-bold text-primary line-accent-center">私たちも、同じ経験をしました</h2>
+</div>
+<div class="bg-white rounded-3xl p-8 md:p-12 shadow-lg shadow-gray-100 border border-gray-100">
+<div class="flex items-center gap-4 mb-6">
+<img src="https://placehold.co/80x80/e8e8f0/4f46e5?text=
