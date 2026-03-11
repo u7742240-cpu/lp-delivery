@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>あなたの悩みを解決するサービス</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        zen: ['Zen Maru Gothic', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
+      },
+      colors: {
+        primary: '#FF6B6B',
+        secondary: '#4ECDC4',
+        accent: '#FFE66D',
+        pop1: '#FF8A5C',
+        pop2: '#A78BFA',
+        pop3: '#34D399',
+        dark: '#2D3436',
+        light: '#FFF9F0',
+      },
+      animation: {
+        pulse_cta: 'pulse_cta 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        float: 'float 3s ease-in-out infinite',
+        bounce_slow: 'bounce_slow 2s ease-in-out infinite',
+      },
+      keyframes: {
+        pulse_cta: {
+          '0%, 100%': { transform: 'scale(1)', boxShadow: '0 0 0 0 rgba(255, 107, 107, 0.7)' },
+          '50%': { transform: 'scale(1.05)', boxShadow: '0 0 0 20px rgba(255, 107, 107, 0)' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        bounce_slow: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-5px)' },
+        },
+      },
+    },
+  },
+}
+</script>
+<style>
+  * { font-family: 'Zen Maru Gothic', sans-serif; }
+  .gradient-bg { background: linear-gradient(135deg, #FF6B6B 0%, #FF8A5C 30%, #FFE66D 60%, #4ECDC4 100%); }
+  .gradient-text { background: linear-gradient(135deg, #FF6B6B, #A78BFA); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .blob-shape { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  .wave-divider { position: relative; }
+  .wave-divider::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 80px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100'%3E%3Cpath fill='%23FFF9F0' d='M0,40 C360,100 1080,0 1440,60 L1440,100 L0,100 Z'/%3E%3C/svg%3E") no-repeat bottom; background-size: cover; }
+  .card-hover { transition: all 0.3s ease; }
+  .card-hover:hover { transform: translateY(-8px) rotate(1deg); }
+  .confetti-dot { position: absolute; width: 8px; height: 8px; border-radius: 50%; opacity: 0.6; }
+  html { scroll-behavior: smooth; }
+</style>
+</head>
+<body class="bg-light text-dark overflow-x-hidden">
+
+<!-- ヘッダー -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center">
+        <span class="text-white font-bold text-lg font-poppins">S</span>
+      </div>
+      <span class="font-bold text-xl text-dark">サービス名</span>
+    </div>
+    <a href="#cta-final" class="hidden sm:inline-block bg-primary text-white font-bold px-6 py-2 rounded-full hover:bg-opacity-90 transition-all text-sm">
+      今すぐ始める 🚀
+    </a>
+  </div>
+</header>
+
+<!-- ヒーローセクション (Problem - 問題提起) -->
+<section class="relative min-h-screen flex items-center pt-20 wave-divider overflow-hidden">
+  <div class="absolute inset-0 gradient-bg opacity-10"></div>
+  <div class="confetti-dot bg-primary top-20 left-10 animate-float" style="animation-delay:0s;"></div>
+  <div class="confetti-dot bg-secondary top-40 right-20 animate-float" style="animation-delay:0.5s;"></div>
+  <div class="confetti-dot bg-accent top-60 left-1/4 animate-float" style="animation-delay:1s;"></div>
+  <div class="confetti-dot bg-pop2 bottom-40 right-1/3 animate-float" style="animation-delay:1.5s;"></div>
+  <div class="confetti-dot bg-pop1 bottom-20 left-1/2 animate-float" style="animation-delay:0.8s;"></div>
+  
+  <div class="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-8 items-center relative z-10">
+    <div class="order-2 md:order-1">
+      <div class="inline-block bg-accent/40 text-dark font-bold px-4 py-1 rounded-full text-sm mb-4 animate-bounce_slow">
+        ✨ あなたの毎日が変わる！
+      </div>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-6">
+        <span class="gradient-text">こんなお悩み</span><br>
+        ありませんか？ 😥
+      </h1>
+      <p class="text-lg md:text-xl text-gray-600 leading-relaxed mb-4">
+        毎日忙しくて時間がない…<br>
+        何から始めればいいかわからない…<br>
+        一人でやるのは不安でいっぱい…
+      </p>
+      <p class="text-xl font-bold text-primary mb-8">
+        そのモヤモヤ、私たちが一緒に解決します！ 💪
+      </p>
+      <a href="#cta-final" class="inline-block bg-primary text-white font-bold text-lg px-10 py-4 rounded-full animate-pulse_cta hover:brightness-110 transition-all shadow-lg shadow-primary/30">
+        無料で相談してみる →
+      </a>
+      <p class="mt-3 text-sm text-gray-400">※ 30秒で簡単お申し込み</p>
+    </div>
+    <div class="order-1 md:order-2 flex justify-center">
+      <div class="relative">
+        <div class="absolute -inset-4 gradient-bg rounded-3xl opacity-20 blur-2xl"></div>
+        <img src="https://placehold.co/500x500/FFE66D/FF6B6B?text=%E2%9C%A8+Hero+Image" alt="ヒーローイメージ" class="relative rounded-3xl shadow-2xl w-full max-w-md blob-shape">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Affinity - 親近感 -->
+<section class="bg-light py-20 px-4">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl md:text-4xl font-black mb-6">
+      実は…私たちも<br class="sm:hidden">
+      <span class="text-primary">同じ悩み</span>を抱えていました 🤝
+    </h2>
+    <div class="bg-white rounded-3xl p-8 md:p-12 shadow-lg border-2 border-accent/30 relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+      <div class="absolute bottom-0 left-0 w-24 h-24 bg-secondary/10 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+      <div class="relative z-10">
+        <div class="w-20 h-20 mx-auto mb-6 rounded-full overflow-hidden border-4 border-accent">
+          <img src="https://placehold.co/200x200/4ECDC4/ffffff?text=%F0%9F%98%8A" alt="代表" class="w-full h-full object-cover">
+        </div>
+        <p class="text-lg leading-relaxed text-gray-600 mb-4">
+          「以前の私も、毎日同じ悩みを抱えていました。何度も失敗して、もうダメかもしれない…と思ったこともあります。」
+        </p>
+        <p class="text-lg leading-relaxed text-gray-600 mb-4">
+          でも、<span class="font-bold text-primary">正しい方法と仲間に出会えたことで</span>、人生が大きく変わりました。
+        </p>
+        <p class="text-lg leading-relaxed font-bold text-dark">
+          だからこそ、同じ悩みを持つあなたの力になりたい。<br>
+          その想いでこのサービスを作りました。💫
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Solution - 解決策 -->
+<section class="py-20 px-4 relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-b from-light via-white to-light"></div>
+  <div class="max-w-6xl mx-auto relative z-10">
+    <div class="text-center mb-16">
+      <span class="inline-block bg-secondary/20 text-secondary font-bold px-4 py-1 rounded-full text-sm mb-4">SOLUTION</span>
+      <h2 class="text-3xl md:text-4xl font-black mb-4">
+        <span class="gradient-text">3つのステップ</span>で<br>
+        お悩みをスッキリ解決！ 🎯
+      </h2>
+      <p class="text-gray-500 text-lg">シンプルだから続けられる。それが私たちの強みです。</p>
+    </div>
+    
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="card-hover bg-white rounded-3xl p-8 shadow-lg border-2 border-primary/10 text-center relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-2 gradient-bg"></div>
+        <div class="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-2xl flex items-center justify-center text-3xl animate-float">
+          📋
+        </div>
+        <div class="inline-block bg-primary text-white font-poppins font-bold text-sm px-3 py-1 rounded-full mb-3">STEP 1</div>
+        <h3 class="text-xl font-bold mb-3">まずはヒアリング</h3>
+        <p class="text-gray-500 leading-relaxed">あなたの現状と目標を丁寧にお聞きします。何でもお気軽にお話しください。</p>
+      </div>
+      
+      <div class="card-hover bg-white rounded-3xl p-8 shadow-lg border-2 border-secondary/10 text-center relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-secondary to-pop3"></div>
+        <div class="w-16 h-16 mx-auto mb-4 bg-secondary/10 rounded-2xl flex items-center justify-center text-3xl animate-float" style="animation-delay: 0.5s;">
+          🎨
+        </div>
+        <div class="inline-block bg-secondary text-white font-poppins font-bold text-sm px-3 py-1 rounded-full mb-3">STEP 2</div>
+        <h3 class="text-xl font-bold mb-3">最適プランをご提案</h3>
+        <p class="text-gray-500 leading-relaxed">あなた専用のプランをオーダーメイドで作成。無理なく始められます。</p>
+      </div>
+      
+      <div class="card-hover bg-white rounded-3xl p-8 shadow-lg border-2 border-pop2/10 text-center relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-pop2 to-primary"></div>
+        <div class="w-16 h-16 mx-auto mb-4 bg-pop2/10 rounded-2xl flex items-center justify-center text-3xl animate-float" style="animation-delay: 1s;">
+          🚀
+        </div>
+        <div class="inline-block bg-pop2 text-white font-poppins font-bold text-sm px-3 py-1 rounded-full mb-3">STEP 3</div>
+        <h3 class="text-xl font-bold mb-3">一緒にスタート！</h3>
+        <p class="text-gray-500 leading-relaxed">サポート付きで安心スタート。目標達成まで伴走します。</p>
+      </div>
+    </div>
+  </div>
