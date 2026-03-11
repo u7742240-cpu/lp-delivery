@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>あなたの暮らしに寄り添うサービス</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        earth: {
+          50: '#faf6f1',
+          100: '#f3ebe0',
+          200: '#e8d5be',
+          300: '#d4b896',
+          400: '#c49a6e',
+          500: '#b07d4f',
+          600: '#9a6840',
+          700: '#7d5235',
+          800: '#674430',
+          900: '#55392a',
+        },
+        sage: {
+          50: '#f4f7f4',
+          100: '#e4ebe4',
+          200: '#c9d7c9',
+          300: '#a3bba3',
+          400: '#7a9b7a',
+          500: '#5a7d5a',
+          600: '#466346',
+          700: '#3a5039',
+          800: '#304130',
+          900: '#293629',
+        },
+        warm: {
+          50: '#fdf8f3',
+          100: '#faeee1',
+          200: '#f4dbc2',
+          300: '#ecc39a',
+          400: '#e2a36f',
+          500: '#d9874d',
+          600: '#cb7142',
+          700: '#a95a38',
+          800: '#874933',
+          900: '#6e3d2c',
+        },
+        cream: '#faf5ed',
+        sand: '#e8ddd0',
+        terracotta: '#c17c5a',
+        forest: '#4a6741',
+        moss: '#7a9464',
+      },
+      fontFamily: {
+        zen: ['Zen Maru Gothic', 'sans-serif'],
+        noto: ['Noto Sans JP', 'sans-serif'],
+      },
+      animation: {
+        pulse_cta: 'pulse_cta 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        float: 'float 3s ease-in-out infinite',
+        fadein: 'fadein 1s ease-out forwards',
+      },
+      keyframes: {
+        pulse_cta: {
+          '0%, 100%': { transform: 'scale(1)', boxShadow: '0 0 0 0 rgba(193, 124, 90, 0.4)' },
+          '50%': { transform: 'scale(1.05)', boxShadow: '0 0 0 20px rgba(193, 124, 90, 0)' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        fadein: {
+          '0%': { opacity: '0', transform: 'translateY(30px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+      },
+    },
+  },
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  .bg-leaf-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 Q35 15 30 25 Q25 15 30 5Z' fill='%237a946420'/%3E%3C/svg%3E");
+  }
+  .section-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+  }
+  .section-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body class="font-noto bg-cream text-earth-800">
+
+<!-- ヘッダー -->
+<header class="fixed top-0 w-full bg-cream/90 backdrop-blur-md z-50 border-b border-sand/50">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <svg class="w-8 h-8 text-sage-500" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 2C15.6 2 13.8 2.8 12.5 4.2C11.2 2.8 9.4 2 7.5 2C3.9 2 1 4.9 1 8.5C1 13.3 6.4 17.7 12.5 23C18.6 17.7 24 13.3 24 8.5C24 4.9 21.1 2 17.5 2Z" opacity="0.2"/><path d="M6 3C4 5 3 8 5 12C7 16 12 19 12 19C12 19 8 14 7 11C6 8 7 5 9 4L6 3Z"/></svg>
+      <span class="font-zen font-bold text-lg text-earth-700">ナチュラルライフ</span>
+    </div>
+    <a href="#cta-final" class="hidden sm:inline-block bg-terracotta text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-warm-600 transition-colors">無料で始める</a>
+  </div>
+</header>
+
+<!-- ヒーローセクション -->
+<section class="relative min-h-screen flex items-center pt-16 overflow-hidden">
+  <div class="absolute inset-0 bg-leaf-pattern opacity-30"></div>
+  <div class="absolute top-20 right-0 w-72 h-72 bg-sage-200/30 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-20 left-0 w-96 h-96 bg-warm-200/30 rounded-full blur-3xl"></div>
+  <div class="relative max-w-6xl mx-auto px-4 py-20 grid lg:grid-cols-2 gap-12 items-center">
+    <div class="text-center lg:text-left">
+      <p class="inline-block bg-sage-100 text-sage-700 px-4 py-1.5 rounded-full text-sm font-medium mb-6">🌿 あなたらしい毎日のために</p>
+      <h1 class="font-zen text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-earth-900 mb-6">
+        忙しい毎日に、<br>
+        <span class="text-terracotta">心がほっとする</span><br>
+        ひとときを。
+      </h1>
+      <p class="text-earth-600 text-base sm:text-lg leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0">
+        日々の暮らしに追われて、自分のことを後回しにしていませんか？<br>
+        たった5分から始められる、あなただけのセルフケア習慣をお届けします。
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+        <a href="#cta-final" class="animate-pulse_cta inline-block bg-terracotta text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-warm-600 transition-colors shadow-lg shadow-warm-300/30">
+          今すぐ無料で体験する →
+        </a>
+        <a href="#features" class="inline-flex items-center justify-center gap-2 text-earth-600 hover:text-terracotta transition-colors px-4 py-4">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          詳しく見る
+        </a>
+      </div>
+      <div class="mt-8 flex items-center gap-6 justify-center lg:justify-start text-sm text-earth-500">
+        <span class="flex items-center gap-1">✓ 初月無料</span>
+        <span class="flex items-center gap-1">✓ いつでも解約OK</span>
+        <span class="flex items-center gap-1">✓ 30秒で登録</span>
+      </div>
+    </div>
+    <div class="relative flex justify-center">
+      <div class="relative w-full max-w-md">
+        <div class="absolute -inset-4 bg-gradient-to-br from-sage-200/50 to-warm-200/50 rounded-3xl blur-xl"></div>
+        <img src="https://placehold.co/600x700/e8ddd0/7d5235?text=Natural+Life&font=playfair-display" alt="ナチュラルライフイメージ" class="relative rounded-3xl shadow-2xl w-full object-cover">
+        <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl p-4 shadow-lg animate-float">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-sage-100 rounded-full flex items-center justify-center text-sage-600 text-xl">🌱</div>
+            <div>
+              <p class="font-bold text-sm text-earth-800">利用者満足度</p>
+              <p class="text-terracotta font-bold text-lg">98.5%</p>
+            </div>
+          </div>
+        </div>
+        <div class="absolute -top-4 -right-4 bg-white rounded-2xl p-4 shadow-lg animate-float" style="animation-delay: 1.5s;">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-warm-100 rounded-full flex items-center justify-center text-warm-600 text-xl">☀️</div>
+            <div>
+              <p class="font-bold text-sm text-earth-800">累計利用者数</p>
+              <p class="text-terracotta font-bold text-lg">50,000+</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <svg class="w-6 h-6 text-earth-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+  </div>
+</section>
+
+<!-- Problem：悩み共感セクション -->
+<section class="py-20 bg-white relative overflow-hidden">
+  <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-sage-300 via-warm-300 to-earth-300"></div>
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="text-center mb-12 section-reveal">
+      <p class="text-terracotta font-medium mb-3 font-zen">こんなお悩みありませんか？</p>
+      <h2 class="font-zen text-2xl sm:text-3xl lg:text-4xl font-bold text-earth-900">
+        毎日がんばっているのに、<br class="sm:hidden">なんだか満たされない…
+      </h2>
+    </div>
+    <div class="grid sm:grid-cols-2 gap-6 section-reveal">
+      <div class="bg-earth-50 border border-sand/50 rounded-2xl p-6 hover:shadow-lg transition-shadow">
+        <div class="text-3xl mb-3">😰</div>
+        <h3 class="font-zen font-bold text-lg text-earth-800 mb-2">朝起きた瞬間からもう疲れている</h3>
+        <p class="text-earth-600 text-sm leading-relaxed">心も体も休まらない日々が続いて、何のために頑張っているのかわからなくなる…</p>
+      </div>
+      <div class="bg-earth-50 border border-sand/50 rounded-2xl p-6 hover:shadow-lg transition-shadow">
+        <div class="text-3xl mb-3">🏃‍♀️</div>
+        <h3 class="font-zen font-bold text-lg text-earth-800 mb-2">自分の時間がまったく取れない</h3>
+        <p class="text-earth-600 text-sm leading-relaxed">仕事・家事・育児に追われ、気づいたら一日が終わっている毎日…</p>
+      </div>
+      <div class="bg-earth-50 border border-sand/50 rounded-2xl p-6 hover:shadow-lg transition-shadow">
+        <div class="text-3xl mb-3">💭</div>
+        <h3 class="font-zen font-bold text-lg text-earth-800 mb-2">何かを変えたいけど何から始めれば？</h3>
+        <p class="text-earth-600 text-sm leading-relaxed">情報が多すぎて、自分に合った方法が見つからない…</p>
+      </div>
+      <div class="bg-earth-50 border border-sand/50 rounded-2xl p-6 hover:shadow-lg transition-shadow">
+        <div class="text-3xl mb-3">🌀</div>
+        <h3 class="font-zen font-bold text-lg text-earth-800 mb-2">心に余裕がなくイライラしがち</h3>
+        <p class="text-earth-600 text-sm leading-relaxed">大切な人に優しくしたいのに、つい感情的になってしまう自分がいる…
