@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ランディングページ</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Noto Sans JP', 'sans-serif'],
+      },
+      colors: {
+        primary: '#2563EB',
+        'primary-dark': '#1D4ED8',
+        accent: '#F59E0B',
+        'accent-dark': '#D97706',
+      },
+      animation: {
+        pulse_cta: 'pulse_cta 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      },
+      keyframes: {
+        pulse_cta: {
+          '0%, 100%': { transform: 'scale(1)', boxShadow: '0 0 0 0 rgba(245, 158, 11, 0.7)' },
+          '50%': { transform: 'scale(1.05)', boxShadow: '0 0 0 15px rgba(245, 158, 11, 0)' },
+        }
+      }
+    }
+  }
+}
+</script>
+<style>
+html { scroll-behavior: smooth; }
+</style>
+</head>
+<body class="font-sans text-gray-800 bg-white">
+
+<!-- ヘッダー -->
+<header class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
+<div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+<div class="text-xl font-bold text-primary">Your Service</div>
+<a href="#cta" class="bg-accent text-white text-sm font-bold px-5 py-2 rounded-full hover:bg-accent-dark transition-colors">お問い合わせ</a>
+</div>
+</header>
+
+<!-- ファーストビュー（Problem - 問題提起） -->
+<section class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-blue-50 via-white to-amber-50">
+<div class="max-w-6xl mx-auto px-4">
+<div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+<div class="flex-1 text-center md:text-left">
+<p class="text-accent font-bold text-sm md:text-base mb-3 tracking-wider">こんなお悩みありませんか？</p>
+<h1 class="text-3xl md:text-5xl font-black leading-tight mb-6">
+あなたの<span class="text-primary">課題</span>を<br>
+根本から<span class="text-accent">解決</span>します
+</h1>
+<p class="text-gray-600 text-base md:text-lg leading-relaxed mb-8">
+毎日のストレスや不安から解放され、<br class="hidden md:block">
+理想の未来を手に入れませんか？
+</p>
+<a href="#cta" class="inline-block bg-accent text-white font-bold text-lg px-10 py-4 rounded-full animate-pulse_cta hover:bg-accent-dark transition-colors shadow-lg">
+今すぐ無料で相談する
+</a>
+<p class="mt-4 text-xs text-gray-500">※ 無料相談は毎月先着30名様限定</p>
+</div>
+<div class="flex-1 max-w-md md:max-w-lg">
+<img src="https://placehold.co/600x450/e0edff/2563EB?text=Hero+Image" alt="メインビジュアル" class="w-full rounded-2xl shadow-xl">
+</div>
+</div>
+</div>
+</section>
+
+<!-- Affinity - 親近感・共感 -->
+<section class="py-16 md:py-24 bg-white">
+<div class="max-w-4xl mx-auto px-4">
+<h2 class="text-2xl md:text-4xl font-bold text-center mb-6">
+こんな<span class="text-primary">お悩み</span>、<br class="md:hidden">抱えていませんか？
+</h2>
+<p class="text-center text-gray-500 mb-12">一つでも当てはまる方は、ぜひ最後までお読みください</p>
+<div class="space-y-4">
+<div class="flex items-start gap-4 bg-red-50 border-l-4 border-red-400 p-5 rounded-r-lg">
+<span class="text-red-400 text-2xl mt-0.5">😟</span>
+<p class="text-gray-700 font-medium">何から始めれば良いか分からず、時間だけが過ぎていく…</p>
+</div>
+<div class="flex items-start gap-4 bg-red-50 border-l-4 border-red-400 p-5 rounded-r-lg">
+<span class="text-red-400 text-2xl mt-0.5">😰</span>
+<p class="text-gray-700 font-medium">いろいろ試してみたけど、思うような成果が出ない…</p>
+</div>
+<div class="flex items-start gap-4 bg-red-50 border-l-4 border-red-400 p-5 rounded-r-lg">
+<span class="text-red-400 text-2xl mt-0.5">😩</span>
+<p class="text-gray-700 font-medium">自分一人では限界を感じている…</p>
+</div>
+<div class="flex items-start gap-4 bg-red-50 border-l-4 border-red-400 p-5 rounded-r-lg">
+<span class="text-red-400 text-2xl mt-0.5">😓</span>
+<p class="text-gray-700 font-medium">コストばかりかかって、投資対効果が見えない…</p>
+</div>
+</div>
+<div class="mt-12 bg-blue-50 rounded-2xl p-8 text-center">
+<p class="text-lg md:text-xl font-bold text-primary mb-2">私たちも同じ悩みを抱えていました。</p>
+<p class="text-gray-600 leading-relaxed">だからこそ、その苦しみが分かります。<br>そして、解決策を見つけました。</p>
+</div>
+</div>
+</section>
+
+<!-- Solution - 解決策の提示 -->
+<section class="py-16 md:py-24 bg-gradient-to-b from-blue-50 to-white">
+<div class="max-w-6xl mx-auto px-4">
+<h2 class="text-2xl md:text-4xl font-bold text-center mb-4">
+その悩み、<br class="md:hidden"><span class="text-primary">Your Service</span>が解決します
+</h2>
+<p class="text-center text-gray-500 mb-14">3つの特長で、あなたの課題にアプローチ</p>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow border border-gray-100">
+<div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-5">
+<span class="text-3xl">🎯</span>
+</div>
+<h3 class="text-xl font-bold mb-3 text-gray-800">特長 1</h3>
+<p class="text-gray-600 leading-relaxed">あなた専用のカスタマイズされたプランで、最短で目標に到達できます。</p>
+</div>
+<div class="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow border border-gray-100">
+<div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-5">
+<span class="text-3xl">⚡</span>
+</div>
+<h3 class="text-xl font-bold mb-3 text-gray-800">特長 2</h3>
+<p class="text-gray-600 leading-relaxed">専門家チームが全面サポート。一人で悩む必要はもうありません。</p>
+</div>
+<div class="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow border border-gray-100">
+<div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-5">
+<span class="text-3xl">📈</span>
+</div>
+<h3 class="text-xl font-bold mb-3 text-gray-800">特長 3</h3>
+<p class="text-gray-600 leading-relaxed">データに基づいた分析で、継続的な改善と成長を実現します。</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Offer - ベネフィット提示 -->
+<section class="py-16 md:py-24 bg-white">
+<div class="max-w-6xl mx-auto px-4">
+<h2 class="text-2xl md:text-4xl font-bold text-center mb-14">
+導入すると<span class="text-accent">こう変わる</span>
+</h2>
+<div class="space-y-12 md:space-y-16">
+<div class="flex flex-col md:flex-row items-center gap-8">
+<div class="flex-1 max-w-sm">
+<img src="https://placehold.co/480x320/FFF7ED/D97706?text=Benefit+1" alt="ベネフィット1" class="w-full rounded-xl shadow-md">
+</div>
+<div class="flex-1">
+<span class="text-accent font-bold text-sm">BENEFIT 01</span>
+<h3 class="text-xl md:text-2xl font-bold mt-2 mb-4">作業時間を最大70%削減</h3>
+<p class="text-gray-600 leading-relaxed">面倒な作業を自動化し、本来集中すべき業務に時間を使えるようになります。生産性が飛躍的に向上します。</p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row-reverse items-center gap-8">
+<div class="flex-1 max-w-sm">
+<img src="https://placehold.co/480x320/EFF6FF/2563EB?text=Benefit+2" alt="ベネフィット2" class="w-full rounded-xl shadow-md">
+</div>
+<div class="flex-1">
+<span class="text-primary font-bold text-sm">BENEFIT 02</span>
+<h3 class="text-xl md:text-2xl font-bold mt-2 mb-4">売上・成果が平均200%アップ</h3>
+<p class="text-gray-600 leading-relaxed">正しい方法で取り組むことで、これまでの常識を超える成果を手に入れることができます。</p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-8">
+<div class="flex-1 max-w-sm">
+<img src="https://placehold.co/480x320/F0FDF4/16A34A?text=Benefit+3" alt="ベネフィット3" class="w-full rounded-xl shadow-md">
+</div>
+<div class="flex-1">
+<span class="text-green-600 font-bold text-sm">BENEFIT 03</span>
+<h3 class="text-xl md:text-2xl font-bold mt-2 mb-4">安心のサポート体制</h3>
+<p class="text-gray-600 leading-relaxed">導入後も専任スタッフが伴走。困ったときはいつでも相談できるから、安心して続けられます。</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 実績・信頼情報 -->
+<section class="py-16 md:py-24 bg-gray-50">
+<div class="max-w-6xl mx-auto px-4">
+<h2 class="text-2xl md:text-4xl font-bold text-center mb-14">
+選ばれ続ける<span class="text-primary">実績</span>
+</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+<div class="bg-white rounded-xl shadow p-6 text-center">
+<p class="text-3xl md:text-4xl font-black text-primary">1,000<span class="text-lg">+</span></p>
+<p class="text-sm text-gray-500 mt-2">導入企業数</p>
+</div>
+<div class="bg-white rounded-xl shadow p-6 text-center">
+<p class="text-3xl md:text-4xl font-black text-primary">98<span class="text-lg">%</span></p>
+<p class="text-sm text-gray-500 mt-2">顧客満足度</p>
+</div>
+<div class="bg-white rounded-xl shadow p-6 text-center">
+<p class="text-3xl md:text-4xl font-black text-primary">200<span class="text-lg">%</span></p>
+<p class="text-sm text-gray-500 mt-2">平均成果向上率</p>
+</div>
+<div class="bg-white rounded-xl shadow p-6 text-center">
+<p class="text-3xl md:text-4xl font-black text-primary">10<span class="text-lg">年</span></p>
+<p class="text-sm text-gray-500 mt-2">サービス運営歴</p>
+</div>
+</div>
+
+<!-- お客様の声 -->
+<h3 class="text-xl md:text-2xl font-bold text-center mb-10">お客様の声</h
