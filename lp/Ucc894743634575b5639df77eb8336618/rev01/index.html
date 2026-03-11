@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ランディングページ</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Noto Sans JP', 'sans-serif'],
+      },
+      animation: {
+        pulse_cta: 'pulse_cta 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      },
+      keyframes: {
+        pulse_cta: {
+          '0%, 100%': { transform: 'scale(1)', boxShadow: '0 0 0 0 rgba(239, 68, 68, 0.7)' },
+          '50%': { transform: 'scale(1.05)', boxShadow: '0 0 0 20px rgba(239, 68, 68, 0)' },
+        }
+      }
+    }
+  }
+}
+</script>
+<style>
+html { scroll-behavior: smooth; }
+</style>
+</head>
+<body class="font-sans text-gray-800 bg-white">
+
+<!-- ヒーローセクション - Problem（問題提起） -->
+<header class="relative bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white overflow-hidden">
+<div class="absolute inset-0 opacity-20">
+<div class="absolute top-0 left-0 w-72 h-72 bg-blue-400 rounded-full filter blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+<div class="absolute bottom-0 right-0 w-96 h-96 bg-indigo-400 rounded-full filter blur-3xl translate-x-1/3 translate-y-1/3"></div>
+</div>
+<nav class="relative z-10 container mx-auto px-4 py-4 flex items-center justify-between">
+<div class="text-2xl font-bold tracking-tight">Your Service</div>
+<a href="#cta" class="hidden md:inline-block bg-white text-blue-900 font-bold px-6 py-2 rounded-full hover:bg-blue-50 transition">お問い合わせ</a>
+</nav>
+<div class="relative z-10 container mx-auto px-4 py-16 md:py-28 text-center">
+<p class="inline-block bg-yellow-400 text-blue-900 font-bold text-sm md:text-base px-4 py-1 rounded-full mb-6">あなたはまだ、この悩みを抱えていませんか？</p>
+<h1 class="text-3xl md:text-5xl lg:text-6xl font-black leading-tight mb-6">
+その悩み、<br class="md:hidden">もう終わりにしませんか？
+</h1>
+<p class="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto mb-10 leading-relaxed">
+毎日の課題に追われ、本来やるべきことに集中できない。<br>
+そんな状況を根本から変える方法があります。
+</p>
+<a href="#cta" class="inline-block bg-red-500 hover:bg-red-600 text-white font-bold text-lg md:text-xl px-10 py-4 rounded-full animate-pulse_cta transition-colors shadow-2xl">
+今すぐ無料で相談する →
+</a>
+<p class="mt-4 text-sm text-blue-200">※ 30秒で簡単入力・無料相談</p>
+</div>
+<div class="relative z-10 max-w-4xl mx-auto px-4 pb-8">
+<img src="https://placehold.co/1200x600/1e3a5f/ffffff?text=Main+Visual" alt="メインビジュアル" class="w-full rounded-2xl shadow-2xl">
+</div>
+</header>
+
+<!-- Affinity（親近感） -->
+<section class="py-16 md:py-24 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="max-w-3xl mx-auto text-center mb-12">
+<p class="text-blue-600 font-bold text-sm mb-3 tracking-widest">UNDERSTAND YOUR PAIN</p>
+<h2 class="text-2xl md:text-4xl font-black mb-6">こんなお悩みありませんか？</h2>
+<p class="text-gray-600 leading-relaxed">一つでも当てはまるなら、ぜひ最後までお読みください。</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+<div class="bg-white rounded-xl p-6 shadow-md border-l-4 border-red-400 hover:shadow-lg transition">
+<div class="text-3xl mb-3">😩</div>
+<h3 class="font-bold text-lg mb-2">時間が足りない</h3>
+<p class="text-gray-600 text-sm leading-relaxed">毎日忙しくて、本当に大切なことに手が回らない…</p>
+</div>
+<div class="bg-white rounded-xl p-6 shadow-md border-l-4 border-red-400 hover:shadow-lg transition">
+<div class="text-3xl mb-3">😰</div>
+<h3 class="font-bold text-lg mb-2">成果が出ない</h3>
+<p class="text-gray-600 text-sm leading-relaxed">頑張っているのに、なかなか結果につながらない…</p>
+</div>
+<div class="bg-white rounded-xl p-6 shadow-md border-l-4 border-red-400 hover:shadow-lg transition">
+<div class="text-3xl mb-3">😣</div>
+<h3 class="font-bold text-lg mb-2">何から始めれば…</h3>
+<p class="text-gray-600 text-sm leading-relaxed">情報が多すぎて、何が正解かわからない…</p>
+</div>
+<div class="bg-white rounded-xl p-6 shadow-md border-l-4 border-red-400 hover:shadow-lg transition">
+<div class="text-3xl mb-3">😤</div>
+<h3 class="font-bold text-lg mb-2">コストがかさむ</h3>
+<p class="text-gray-600 text-sm leading-relaxed">投資しても見合ったリターンが得られていない…</p>
+</div>
+<div class="bg-white rounded-xl p-6 shadow-md border-l-4 border-red-400 hover:shadow-lg transition">
+<div class="text-3xl mb-3">😞</div>
+<h3 class="font-bold text-lg mb-2">専門知識がない</h3>
+<p class="text-gray-600 text-sm leading-relaxed">プロに頼みたいけど、信頼できる人が見つからない…</p>
+</div>
+<div class="bg-white rounded-xl p-6 shadow-md border-l-4 border-red-400 hover:shadow-lg transition">
+<div class="text-3xl mb-3">😔</div>
+<h3 class="font-bold text-lg mb-2">将来が不安</h3>
+<p class="text-gray-600 text-sm leading-relaxed">このまま続けて大丈夫なのか、漠然とした不安がある…</p>
+</div>
+</div>
+<div class="text-center mt-12">
+<p class="text-xl md:text-2xl font-bold text-blue-900">
+その気持ち、<span class="text-red-500">とてもよくわかります。</span>
+</p>
+<p class="text-gray-600 mt-3">私たちも同じ悩みを経験してきたからこそ、解決策を見つけました。</p>
+</div>
+</div>
+</section>
+
+<!-- Solution（解決策） -->
+<section class="py-16 md:py-24 bg-white">
+<div class="container mx-auto px-4">
+<div class="max-w-3xl mx-auto text-center mb-16">
+<p class="text-blue-600 font-bold text-sm mb-3 tracking-widest">SOLUTION</p>
+<h2 class="text-2xl md:text-4xl font-black mb-6">
+その悩み、<br class="md:hidden"><span class="text-blue-600">すべて解決できます。</span>
+</h2>
+<p class="text-gray-600 leading-relaxed">
+私たちのサービスは、あなたの課題を根本から解決するために設計されています。
+</p>
+</div>
+<div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center mb-20">
+<div>
+<img src="https://placehold.co/600x400/e0e7ff/4338ca?text=Feature+1" alt="特徴1" class="rounded-2xl shadow-lg w-full">
+</div>
+<div>
+<div class="inline-block bg-blue-100 text-blue-700 font-bold text-sm px-4 py-1 rounded-full mb-4">Feature 01</div>
+<h3 class="text-xl md:text-2xl font-bold mb-4">シンプルで直感的な操作</h3>
+<p class="text-gray-600 leading-relaxed mb-4">
+専門知識は一切不要。誰でも簡単に使い始められる設計で、導入初日から効果を実感できます。
+</p>
+<ul class="space-y-2">
+<li class="flex items-center text-sm text-gray-700"><span class="text-green-500 mr-2 text-lg">✓</span>初期設定わずか5分</li>
+<li class="flex items-center text-sm text-gray-700"><span class="text-green-500 mr-2 text-lg">✓</span>充実のチュートリアル完備</li>
+<li class="flex items-center text-sm text-gray-700"><span class="text-green-500 mr-2 text-lg">✓</span>24時間サポート対応</li>
+</ul>
+</div>
+</div>
+<div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center mb-20">
+<div class="order-2 md:order-1">
+<div class="inline-block bg-green-100 text-green-700 font-bold text-sm px-4 py-1 rounded-full mb-4">Feature 02</div>
+<h3 class="text-xl md:text-2xl font-bold mb-4">圧倒的なコストパフォーマンス</h3>
+<p class="text-gray-600 leading-relaxed mb-4">
+従来の方法と比較して最大80%のコスト削減を実現。投資対効果の高さは業界トップクラスです。
+</p>
+<ul class="space-y-2">
+<li class="flex items-center text-sm text-gray-700"><span class="text-green-500 mr-2 text-lg">✓</span>初期費用0円から</li>
+<li class="flex items-center text-sm text-gray-700"><span class="text-green-500 mr-2 text-lg">✓</span>明朗な料金体系</li>
+<li class="flex items-center text-sm text-gray-700"><span class="text-green-500 mr-2 text-lg">✓</span>いつでも解約可能</li>
+</ul>
+</div>
+<div class="order-1 md:order-2">
+<img src="https://placehold.co/600x400/d1fae5/065f46?text=Feature+2" alt="特徴2" class="rounded-2xl shadow-lg w-full">
+</div>
+</div>
+<div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+<div>
+<img src="https://placehold.co/600x400/fef3c7/92400e?text=Feature+3" alt="特徴3" class="rounded-2xl shadow-lg w-full">
+</div>
+<div>
+<div class="inline-block bg-yellow-100 text-yellow-700 font-bold text-sm px-4 py-1 rounded-full mb-4">Feature 03</div>
+<h3 class="text-xl md:text-2xl font-bold mb-4">専任チームによる徹底サポート</h3>
+<p class="text-gray-600 leading-relaxed mb-4">
+あなた専任のプロフェッショナルチームが、目標達成まで伴走します。一人で悩む必要はもうありません。
+</p>
+<ul class="space-y-2">
+<li class="flex items-center text-sm text-gray-700"><span class="text-green-500 mr-2 text-lg">✓</span>専任担当者制</li>
+<li class="flex items-center text-sm text-gray-700"><span class="text-green-500 mr-2 text-lg">✓</span>月次レポート提供</li>
+<li class="flex items-center text-sm text-gray-700"><span class="text-green-500 mr-2 text-lg">✓</span>改善提案も無料</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Offer（提案）+ 実績 -->
+<section class="py-16 md:py-24 bg-blue-900 text-white">
+<div class="container mx-auto px-4">
+<div class="max-w-3xl mx-auto text-center mb-16">
+<p class="text-blue-300 font-bold text-sm mb-3 tracking-widest">RESULTS & TRUST</p>
+<h2 class="text-2xl md:text-4xl font-black mb-6">選ばれ続ける実績</h2>
+<p class="text-blue-200 leading-
